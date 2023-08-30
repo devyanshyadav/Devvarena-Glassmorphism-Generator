@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+
+:root {
+    --Color1: #202040;
+    --Color2: #18122B;
+    --Color3: white;
+    --Color4: #343A40;
+    --Color5: #4433ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--Color1);
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-y: scroll;
+
+}
+
+.DevvarenaLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10px;
+    gap: 5px;
+    font-size: 25px;
+    background: linear-gradient(to right, #4433ff, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    user-select: none;
+}
+
+.DevvarenaLogo img {
+    width: 30px;
+}
+
+.glassmorphHeader h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.DevvarenaLogo:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--Color5);
+    border: 1px solid var(--Color5);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #4433ff9e;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.glassmorphHeader {
+    height: 60px;
+    background-color: var(--Color1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+.mainglassSection {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.leftglassSection {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rightglassSection {
+   width: 35%;
+    background-color: var(--Color2);
+    height: 100%;
+    display: grid;
+    gap: 5px;
+    padding: 4px;
+    box-sizing: border-box;
+
+}
+
+.glassPreviewFrame {
+    width: 100%;
+    height: 70%;
+    border: 0px;
+}
+
+.codePreviewFrame {
+    height: 30%;
+    width: 100%;
+    background-color: var(--Color1);
+    position: relative;
+    padding: 18px;
+
+}
+
+.rightglassSection div {
+   width: 100%;
+    background-color: var(--Color1);
+    border-radius: 5px;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+/* here is range custom css */
+.range-wrap {
+    position: relative;
+    padding-top: 5px;
+}
+
+.bubble {
+    background: var(--Color5);
+    color: var(--Color3);
+    padding: 2px 4px;
+    position: absolute;
+    border-radius: 3px;
+    left: 50%;
+    top: 38px;
+    transform: translateX(-50%);
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 9px solid var(--Color5);
+
+    top: -7px;
+    left: 40%;
+}
+
+#glassColorSlide {
+    width: 100%;
+    border-radius: 4px;
+    border: 3px solid var(--Color5);
+    margin-top: 10px;
+
+}
+
+.copyglassCode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+.whenCodeEcopied {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(8.3px);
+    font-size: 30px;
+    background: linear-gradient(to right, #4433ff, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.whenCodeEcopied.active {
+    display: flex;
+}
+
+.getPreviewglassCode {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #4433ff;
+
+}
+
+/* Cutomizing input range  */
+input[type=range] {
+    height: 4px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--Color5);
+    border: 1px solid var(--Color2);
+    border-radius: 100px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: 2px solid var(--Color5);
+    height: 20px;
+    width: 20px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--Color1);
+    border-radius: 1px;
+    border: 2px solid var(--Color5);
+
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 1px solid var(--Color2);
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: var(--Color1);
+    border: 1px solid var(--Color2);
+    border-radius: 2px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: var(--Color1);
+    border: 2px solid var(--Color5);
+    border-radius: 2px;
+
+}
+
+input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    border: 2px solid var(--Color5);
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+
+.EditorLogo {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to right, #4433ff, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 10px;
+}
+
+@media(max-width:600px) {
+    body {
+        height: auto;
+    }
+
+    .mainglassSection {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .leftglassSection {
+        width: 100%;
+    }
+
+    .rightglassSection {
+        width: 100%;
+
+    }
+
+    .glassPreviewFrame {
+        height: 330px;
+    }
+
+    .codePreviewFrame {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .DevvarenaLogo {
+        position: static;
+    }
+
+    .glassmorphHeader h3 {
+        font-size: 18px;
+    }
+
+    .glassmorphHeader {
+        flex-direction: column;
+        font-size: 12px;
+        height: auto;
+        padding: 5px 0px;
+    }
+}
