@@ -41,7 +41,7 @@ body {
   position: absolute;
   left: 10px;
   gap: 5px;
-  font-size: 27px;
+  font-size: 28px;
   background: linear-gradient(to right, #4433ff, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
